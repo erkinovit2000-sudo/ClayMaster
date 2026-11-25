@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClayMaster — Handmade clay football figurines</title>
+<meta name="description" content="Premium handmade clay football player figurines.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=JSON.parse(localStorage.getItem('theme'));if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.dataset.theme='dark'}catch(e){}</script>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#top" data-nav="home"><img src="assets/logo.svg" alt="" width="34" height="34"><span>ClayMaster</span></a>
+  <nav id="menu" aria-label="Main">
+    <a href="#top" data-nav="home" data-i18n="nav_home"></a>
+    <a href="#products" data-nav="all" data-i18n="nav_all"></a>
+    <a href="#products" data-nav="legends" data-i18n="nav_legends"></a>
+    <a href="#products" data-nav="clubs" data-i18n="nav_clubs"></a>
+    <a href="#products" data-nav="new" data-i18n="nav_new"></a>
+    <a href="#products" data-nav="best" data-i18n="nav_best"></a>
+    <a href="#about" data-nav="about" data-i18n="nav_about"></a>
+  </nav>
+  <div class="tools">
+    <input id="q" type="search" data-ph="search" aria-label="Search">
+    <select id="lang" aria-label="Language"><option value="en">English</option><option value="uz">O'zbekcha</option><option value="ru">Русский</option></select>
+    <button class="ib" id="theme" data-act="theme" aria-label="Theme">◐</button>
+    <button class="ib" data-act="account" aria-label="Account">☺</button>
+    <button class="ib" data-act="cart" aria-label="Cart">🛒<span id="cc" class="cc">0</span></button>
+    <button class="ib burger" data-act="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div><h1 data-i18n="hero_t"></h1><p data-i18n="hero_s"></p><a class="btn p" href="#products" data-i18n="shop"></a></div>
+    <div class="stage"><img id="h1" alt="" width="400" height="400"><img id="h2" alt="" width="400" height="400"><img id="h3" alt="" width="400" height="400"></div>
+  </section>
+  <section id="products" class="wrap">
+    <h2><span data-i18n="products"></span> <small id="count"></small></h2>
+    <div class="filters">
+      <label><span data-i18n="category"></span><select id="fCat"></select></label>
+      <label><span data-i18n="club"></span><select id="fClub"></select></label>
+      <label><span data-i18n="maxp"></span> <b id="mp"></b><input id="fMax" type="range" min="20" max="60" step="1" value="60"></label>
+      <label><span data-i18n="rating"></span><select id="fRating"></select></label>
+      <label><span data-i18n="sort"></span><select id="fSort"></select></label>
+    </div>
+    <div id="grid" class="grid"><p class="load">…</p></div>
+  </section>
+  <section id="about" class="wrap two"><div><h2 data-i18n="about_t"></h2><p data-i18n="about_p"></p></div><div id="contact"><h2 data-i18n="contact_t"></h2><p data-i18n="contact_p"></p></div></section>
+</main>
+<footer><span>© 2026 ClayMaster. <span data-i18n="rights"></span></span><button class="ib" id="up" data-act="top" aria-label="Back to top">↑</button></footer>
+<div id="modal" class="modal" hidden><div class="box" role="dialog" aria-modal="true"><button class="x" data-act="close" data-i18n-aria="close" aria-label="Close">×</button><div id="mbody"></div></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="products.js"></script><script src="translations.js"></script><script src="script.js"></script>
+</body>
+</html>
